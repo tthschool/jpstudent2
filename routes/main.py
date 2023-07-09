@@ -5,7 +5,7 @@ from datetime import datetime
 from email_validator import validate_email, EmailNotValidError
 from extensions import db
 from models import Student ,user_table
-main_bp = Blueprint('main', __name__ , url_prefix='/main')
+main_bp = Blueprint('main', __name__ )
 
 @main_bp.route('/')
 @login_required
