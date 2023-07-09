@@ -20,5 +20,4 @@ def create_app(config_file = "settings.py"):
     login_manager.init_app(app)
     app.register_blueprint(main_bp)
     app.register_blueprint(check_bp)
-    # ...
     return app
