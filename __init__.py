@@ -13,7 +13,7 @@ def create_app(config_file = "settings.py"):
     db.init_app(app)
     with app.app_context():
         db.create_all()
-    login_manager.login_view = 'auth.login'
+    login_manager.login_view = 'check.login'
     @login_manager.user_loader
     def load_user(user_id):
         return user_table.query.get(user_id)
