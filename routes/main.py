@@ -5,7 +5,7 @@ from datetime import datetime
 from email_validator import validate_email, EmailNotValidError
 from extensions import db
 from models import Student ,user_table
-main_bp = Blueprint('main', __name__ , url_prefix="/main" )
+main_bp = Blueprint('main', __name__  )
 
 @main_bp.route('/')
 @login_required
@@ -75,7 +75,7 @@ def update_student(id):
         student.Email  = request.form['Email']
         student.Class  = request.form['Class']
         db.session.commit()
-        return redirect(url_for('main.students'))
+        return redirect(url_for('students'))
     else:
         return render_template('update.html', student=student)
 #----------------------------------------------------------------------
